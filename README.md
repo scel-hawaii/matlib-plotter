@@ -29,6 +29,7 @@ In the plotting class titled *Plot_Class.py*, the user can plot graphs from a cs
 * Title for the y-axis of the graph (y_axis)
 * Titles for the fields for the legend in a list in the order of the fields in the CSV file (field_titles)
 * Colors to be used for the different fields in a list (colors)
+
 The names of the keys in the dictionary for the described properties above need to be set to the words in the parentheses.  If the user would not like to specify certain fields, they can just input an empty string or list.  If a title is not input by the user, a title will not appear for the graph or axis.  If a list of names for the fields for the legend is not input by the user, a list of more specific names including the units for the field will be used instead.  If the user does not input a list of colors, a set of random colors is used.  An example of a dictionary specifying the properties of the graph can be found below.
 
 	plot_prop = {'title':'Weather Box Data', 'x_title':'Time', 'y_title': '', 'field_titles':[],'colors':[]}
@@ -40,6 +41,7 @@ Following this, the user will create an instance of the plotting class.  In crea
 * Fields the user wishes to plot in a list
 * Dictionary for the plotting properties
 * True or False for whether or not the user would like to plot all the fields in the CSV file
+
 The name of the CSV file needs to be entered exactly as the file is titled.  The start and end date and time need to be entered in the following format: YYYY-mm-dd HH:MM:SS.ffffff-zz, where Y is the year, m is the month, d is the day, H is the hour, M is the minutes, S is the seconds, f is the microseconds, and z is the UTC offset.  The CSV file needs to be in the same directory as the Python plotting class.  Even if a list of fields is entered by the user, if True is set for whether or not the user would like to plot all fields of the CSV file, all fields will be plotted.  An example of creating an instance of the plotting class is provided below.
 
 	weatherbox = Plotting('215_data.csv', '2014-05-26 00:00:00.000000-10', '2014-05-29 21:56:14.000000-10', ['apogee_w_m2','panel_mv','batt_mv','bmp085_temp_decic'], plot_prop, True)
